@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 /* RESET */
 body {
-    background-color: black;
-    color: white;
+    background-image: linear-gradient(92.88deg,#fcff55, #55ffe4,#b455ff );
+    color:white;
+    font-family: "Michroma", sans-serif;
 }
 
 /* HEADER */
@@ -9,15 +11,19 @@ body {
 header h1 {
     margin: 6rem 3rem 3rem 0rem ;
     font-weight: 700;;
-    font-size: 2.3rem;
+    font-size: 2.8rem;
+    font-family: ;
     text-align: center;
     white-space:nowrap;
-
+    color:rgb(49, 49, 49);
+    text-shadow: 1px 1px 0 #fff, /* Borda branca */ -2px 2px 0 #fff, 2px -2px 0 #fff, -2px -2px 0 #fff;
+    font-family: "Michroma", sans-serif;
 }
 
 .button {
     margin: 4px 4px;
-    background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    background-color: rgb(49, 49, 49);
+    border: 1px solid white;
     border-radius: 8px;
     box-sizing: border-box;
     color: #FFFFFF;
@@ -36,3 +42,42 @@ nav a {
     text-decoration: none;
 }
 
+/* Card ormulário */
+
+.input-card {
+    display: flex;
+    width: 60%;
+    padding: 1rem;
+    margin: 0 auto;
+    background-color: rgb(49, 49, 49);
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: 2px solid white;
+}
+
+#in-Data, #in-Tarefa {
+    width: 100%;
+    margin-bottom: 5px;
+    /* white-space: nowrap; */
+}
+.inputs {
+    width: 80%;
+
+}
+.labels p{
+    margin-left: 2rem;
+    position: relative;
+    top: 3px;
+}
+
+.labels {
+    width: 20%;
+
+}
+/* Campo de input text com fundo preto */
+input[type="text"] {
+    background-color: rgb(49, 49, 49); /* Cor de fundo preta */
+    color: white;            /* Cor do texto branca para contraste */
+    border: 1px solid #ccc;  /* Borda cinza clara para visualização */          /* Espaçamento interno */
+    border-radius: 5px;      /* Borda arredondada */
+}

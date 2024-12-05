@@ -1,0 +1,38 @@
+/* RESET */
+body {
+    background-color: black;
+    color: white;
+}
+
+/* HEADER */
+
+header h1 {
+    margin: 6rem 3rem 3rem 0rem ;
+    font-weight: 700;;
+    font-size: 2.3rem;
+    text-align: center;
+    white-space:nowrap;
+
+}
+
+.button {
+    margin: 4px 4px;
+    background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: 500;
+    height: 5rem;
+    padding: 1rem 1.6rem;
+    text-align: center;
+    position: absolute;
+    top:0;
+    right: 0;
+} 
+
+nav a {
+    text-decoration: none;
+}
+

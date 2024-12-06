@@ -112,6 +112,7 @@ input[type="text"] {
     flex-direction: row;
     justify-content: space-around;
     font-size: 0.8rem;
+    
 }
 .icon img{
     cursor:pointer;

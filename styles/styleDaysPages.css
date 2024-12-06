@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
 /* RESET */
 body {
     background-image: linear-gradient(92.88deg,#fcff55, #55ffe4,#b455ff );
@@ -42,7 +43,6 @@ header h1 {
     right: 0;
     
 } 
-
 
 nav a {
     text-decoration: none;
@@ -99,10 +99,21 @@ nav a {
     border-radius: 8px;
 }
 
-/* Campo de input text com fundo preto */
 input[type="text"] {
-    background-color: rgb(49, 49, 49); /* Cor de fundo preta */
-    color: white;            /* Cor do texto branca para contraste */
-    border: 1px solid #ccc;  /* Borda cinza clara para visualização */          /* Espaçamento interno */
-    border-radius: 5px;      /* Borda arredondada */
+    background-color: rgb(49, 49, 49);
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;   
+}
+
+/*CAMPO TAREFAS */
+.task-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 0.8rem;
+}
+.icon img{
+    cursor:pointer;
+    width: 2rem;
 }

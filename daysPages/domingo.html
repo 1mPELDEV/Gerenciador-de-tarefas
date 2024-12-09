@@ -10,11 +10,40 @@
 <body>
     <header>
         <a class="button" href="../index.html">Back</a>
-        <h1> Gerenciador de tarefas</h1>
+        <h1>DOMINGO</h1>
+        <h2> Gerenciador de Rotina</h2>
     </header>
-    
+    <main>
+        <div class="input-card ">
+            <div class="column">
+                <div class="labels">
+                    <p class="tarefa"> Tarefa : </p>
+                    <p > Hora  :</p>   
+                </div>
+                <div class="inputs">
+                    <input type="text" id="in-Tarefa" >
+                     <input type="text" id="in-Hora">
+                </div>
+            </div>
+            <div class="row">
+                <div class="buttons">
+                    <button class="btn" id="btnAdd" onclick="newTask()"> Adicionar</button>      
+                    <button class="btn" id="btnClean"> Limpar </button>   
+                    </div>                   
+                </div>  
+            </div>
+        </div>
+        <div class="task-conteiner" id="outTask">
+             <!-- <div class="task-card input-card">
+                <div class="ico-check icon" onclick="taskDone()" id="outChecked"> <img src="../img/check-off.png" alt="check-off icon" ></div>
+                <div class="task" id="outTask"> <p>Retirar o lixo</p></div>
+                <div class="hour" id="outHour">10 as 11</div>
+                <div class="ico-delete icon" onclick="deleteTask()"> <img src="../img/delete.png" alt="delete-item"></div>
+            </div>  -->
+        </div>
+        
+    </main>
 
-
-    <script src="scripts/myScripts.js"></script>
+   <script src="../scripts/myScripts.js"></script>
 </body>
 </html>

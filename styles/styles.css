@@ -1,19 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 /* RESET */
 body {
-    background-color: black;
-    color: white;
+    background-image: linear-gradient(92.88deg,#fcff55, #55ffe4,#b455ff );
+    background-size: cover;
+    color:white;
+    font-family: "Michroma", sans-serif;
 }
-
 /* HEADER */
 
 header h1 {
-    margin: 3rem 0;
-    font-weight: 700;;
-    font-size: 2.3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.4rem;
     text-align: center;
     white-space:nowrap;
+    color:rgb(49, 49, 49);
+    text-shadow: 1px 1px 0 #fff, /* Borda branca */ -2px 2px 0 #fff, 2px -2px 0 #fff, -2px -2px 0 #fff;
+    font-family: "Michroma", sans-serif;
+    margin-top: 15%;
+    margin-bottom: 3%;
+    
 
 }
+header h2 {
+    font-weight: 700;;
+    font-size: 0.8rem;
+    text-align: center;
+    white-space:nowrap;
+    color:rgb(49, 49, 49);
+    text-shadow: 1px 1px 0 #fff, /* Borda branca */ -2px 2px 0 #fff, 2px -2px 0 #fff, -2px -2px 0 #fff;
+    font-family: "Michroma", sans-serif;
+    margin-bottom: 10%;
+
+    
+}
+
 
 /* BARRA DE NAVEGAÇÃO */
 
@@ -23,20 +44,31 @@ header h1 {
 }
 .button {
     margin: 4px 4px;
-    background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    background-color: rgb(49, 49, 49);
+    border: 1px solid white;
     border-radius: 8px;
-    box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;
     font-size: 1.4rem;
     font-weight: 500;
-    height: 5rem;
+    height: 2.5rem;
     padding: 1rem 1.6rem;
     text-align: center;
+    margin-bottom: 1rem;
 } 
 
 nav a {
     text-decoration: none;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 5rem;
+    color:rgb(49, 49, 49);
+
 }
 
 /*  */

@@ -10,16 +10,27 @@ body {
 }
 
 /* HEADER */
-
 header h1 {
-    font-weight: 700;;
-    font-size: 1.2rem;
+    font-weight: bold;
+    font-size: 2rem;
     text-align: center;
     white-space:nowrap;
     color:rgb(49, 49, 49);
     text-shadow: 1px 1px 0 #fff, /* Borda branca */ -2px 2px 0 #fff, 2px -2px 0 #fff, -2px -2px 0 #fff;
     font-family: "Michroma", sans-serif;
     margin-top: 25%;
+
+}
+
+header h2 {
+    font-weight: 700;;
+    font-size: 0.8rem;
+    text-align: center;
+    white-space:nowrap;
+    color:rgb(49, 49, 49);
+    text-shadow: 1px 1px 0 #fff, /* Borda branca */ -2px 2px 0 #fff, 2px -2px 0 #fff, -2px -2px 0 #fff;
+    font-family: "Michroma", sans-serif;
+    margin-top: 1rem;
     
 }
 
@@ -66,7 +77,7 @@ nav a {
     display: flex;
 }
 
-#in-Data, #in-Tarefa {
+#in-Hora, #in-Tarefa {
     width: 100%;
     margin-bottom: 5px;
     /* white-space: nowrap; */
@@ -118,3 +129,4 @@ input[type="text"] {
     cursor:pointer;
     width: 2rem;
 }
+

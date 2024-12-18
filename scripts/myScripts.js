@@ -1,64 +1,87 @@
+let tasks = [];
 
-// FUNÇÃO QUE MARCA A CAIXINHA TAREFA FEITA
-function taskDone() {
-     let checked = document.getElementById('outChecked');
-     checked.innerHTML = '<img src="../img/check-on.svg" alt="checked-on icon">';
-     checked.setAttribute('onclick', 'taskNotDone()');
- }
- 
- // FUNÇÃO QUE DESMARCA A CAIXINHA TAREFA FEITA
- function taskNotDone() {
-     let unChecked = document.getElementById('outChecked');
-     unChecked.innerHTML = '<img src="../img/check-off.png" alt="check-off icon">';
-     unChecked.setAttribute('onclick', 'taskDone()');
- }
+// Carregar tarefas do LocalStorage ao carregar a página
+document.addEventListener('DOMContentLoaded', (event) => {
+    const storedTasks = localStorage.getItem('tasks');
+    if (storedTasks) {
+        tasks = JSON.parse(storedTasks);
+        renderTasks();
+    }
+});
 
- // FUNÇÃO ADICIONAR TAREFA 
- function newTask() {
+function newTask() {
     let taskContainer = document.getElementById('outTask');
     let inTaskElement = document.getElementById('in-Tarefa');
     let inTimeElement = document.getElementById('in-Hora');
 
-    let inTask = inTaskElement.value
-    let inTime = inTimeElement.value
+    let inTask = inTaskElement.value;
+    let inTime = inTimeElement.value;
 
-    if (inTask === "" || inTime === "" || isNaN(inTime) ) {
-        alert("Preencha todos os campos de forma válida"); 
-        return} 
-
-        let newTaskHTML = `
-        <div class="task-card input-card">
-            <div class="ico-check icon" onclick="taskDone(this)"> 
-                <img src="../img/check-off.png" alt="check-off icon">
-            </div>
-            <div class="task">
-                <p> ${inTask}</p>
-            </div>
-            <div class="hour">${inTime}:hrs</div>
-            <div class="ico-delete icon" onclick="deleteTask(this)"> 
-                <img src="../img/delete.png" alt="delete-item">
-            </div>
-        </div>`;
-
-    taskContainer.innerHTML += newTaskHTML;
-
-    inTaskElement.value ="";
-    inTimeElement.value ="";
+    if (inTask === "" || inTime === "" || isNaN(inTime)) {
+        alert("Preencha todos os campos de forma válida");
+        return;
     }
-  
 
-function taskDone(element) {
-    element.innerHTML = '<img src="../img/check-on.svg" alt="checked-on icon">';
-    element.setAttribute('onclick', 'taskNotDone(this)');
+    // Adicionar a nova tarefa à lista de tarefas
+    tasks.push({ task: inTask, time: parseFloat(inTime), done: false });
+
+    // Salvar a lista de tarefas no LocalStorage
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+
+    // Renderizar as tarefas no DOM
+    renderTasks();
+
+    // Limpar os campos de entrada
+    inTaskElement.value = "";
+    inTimeElement.value = "";
 }
 
-function taskNotDone(element) {
-    element.innerHTML = '<img src="../img/check-off.png" alt="check-off icon">';
-    element.setAttribute('onclick', 'taskDone(this)');
+function renderTasks() {
+    let taskContainer = document.getElementById('outTask');
+    taskContainer.innerHTML = ""; // Limpar o contêiner
+
+    // Renderizar cada tarefa
+    tasks.forEach((task, index) => {
+        let taskHTML = `
+            <div class="task-card input-card">
+                <div class="ico-check icon" onclick="taskDone(${index})"> 
+                    <img src="${task.done ? '../img/check-on.svg' : '../img/check-off.png'}" alt="${task.done ? 'checked-on icon' : 'check-off icon'}">
+                </div>
+                <div class="task">
+                    <p>${task.task}</p>
+                </div>
+                <div class="hour">${task.time}:hrs</div>
+                <div class="ico-delete icon" onclick="deleteTask(${index})"> 
+                    <img src="../img/delete.png" alt="delete-item">
+                </div>
+            </div>`;
+        taskContainer.innerHTML += taskHTML;
+    });
 }
 
-function deleteTask(element) {
-    element.parentElement.remove();
+function taskDone(index) {
+    tasks[index].done = !tasks[index].done; // Alternar o estado de concluído
+    localStorage.setItem('tasks', JSON.stringify(tasks)); // Atualizar o LocalStorage
+    renderTasks(); // Atualizar o DOM
 }
+
+function deleteTask(index) {
+    tasks.splice(index, 1); // Remover a tarefa da lista
+    localStorage.setItem('tasks', JSON.stringify(tasks)); // Atualizar o LocalStorage
+    renderTasks(); // Atualizar o DOM
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

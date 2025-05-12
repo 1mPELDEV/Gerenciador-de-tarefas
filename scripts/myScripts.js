@@ -12,8 +12,8 @@ function addTask() {
         return;
     }       
     taskList = `
-        <div class="task-card input-card">
-            <div class="ico-check icon" onclick="taskDone()" id="outChecked"> <img src="../img/check-off.png" alt="check-off icon" ></div>
+        <div class="task-card input-card ">
+            <div class="ico-check icon" onclick="taskDone(this)"> <img src="../img/check-off.png" alt="check-off icon" ></div>
             <div class="task" id="outTask"> <p>${task}</p></div>
             <div class="hour" id="outHour">${data}</div>
             <div class="ico-delete icon" onclick="deleteTask()"> <img src="../img/delete.png" alt="delete-item"></div>
@@ -34,17 +34,15 @@ function deleteTask() {
 }
 
 // FUNÇÃO QUE MARCA A CAIXINHA TAREFA FEITA
-function taskDone() {
-     let checked = document.getElementById('outChecked');
-     checked.innerHTML = '<img src="../img/check-on.svg" alt="checked-on icon">';
-     checked.setAttribute('onclick', 'taskNotDone()');
+function taskDone(element) {
+     element.innerHTML = '<img src="../img/check-on.svg" alt="checked-on icon">';
+     element.setAttribute('onclick', 'taskNotDone(this)');
  }
 
  // FUNÇÃO QUE DESMARCA A CAIXINHA TAREFA FEITA
  function taskNotDone() {
-     let unChecked = document.getElementById('outChecked');
-     unChecked.innerHTML = '<img src="../img/check-off.png" alt="check-off icon">';
-     unChecked.setAttribute('onclick', 'taskDone()');
+     element.innerHTML = '<img src="../img/check-off.png" alt="check-off icon">';
+     element.setAttribute('onclick', 'taskDone(this)');
  }
 
  //

@@ -14,7 +14,7 @@ function addTask() {
         return;
     } 
     
-    // carrega lsita atual do localStorage se n tiver cra um array vazio || [];
+    // carrega lista atual do localStorage se n tiver cra um array vazio || [];
 
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
@@ -80,46 +80,3 @@ function renderTasks(tasks) {
         outList.innerHTML += taskCard;
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function deleteTask() {
-    let outList = document.getElementById('outList');
-    let taskCard = event.target.closest('.task-card');
-    if (taskCard) {
-        outList.removeChild(taskCard);
-    }
-}
-
-// FUNÇÃO QUE MARCA A CAIXINHA TAREFA FEITA
-function taskDone(element) {
-     element.innerHTML = '<img src="../img/check-on.svg" alt="checked-on icon">';
-     element.setAttribute('onclick', 'taskNotDone(this)');
- }
-
- // FUNÇÃO QUE DESMARCA A CAIXINHA TAREFA FEITA
- function taskNotDone() {
-     element.innerHTML = '<img src="../img/check-off.png" alt="check-off icon">';
-     element.setAttribute('onclick', 'taskDone(this)');
- }
-
- 

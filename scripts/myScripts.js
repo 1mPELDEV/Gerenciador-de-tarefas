@@ -3,8 +3,6 @@
 function addTask() {
     let task = document.getElementById('in-Tarefa').value;
     let data = document.getElementById('in-Data').value;
-    // let outList = document.getElementById('outList');
-    // let taskList = "";
     if (task == "") {
         alert('Digite uma tarefa!');
         return;
@@ -59,7 +57,15 @@ function loadTasks() {
 
 function renderTasks(tasks) {
     // Ordena por data
-    tasks.sort((a, b) => new Date(a.data) - new Date(b.data));
+    // tasks.sort(function(a, b){ return new Date(a.data) - new Date(b.data)});
+
+    tasks.sort(function(a, b) {
+    let timeA = new Date(a.data).getHours() * 60 + new Date(a.data).getMinutes(); // Tempo em minutos
+    let timeB = new Date(b.data).getHours() * 60 + new Date(b.data).getMinutes(); // Tempo em minutos
+    return timeA - timeB; // Ordena pelo tempo (em minutos)
+
+    
+});
 
     let outList = document.getElementById('outList');
     outList.innerHTML = '';
